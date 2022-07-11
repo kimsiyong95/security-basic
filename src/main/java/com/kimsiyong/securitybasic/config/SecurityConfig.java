@@ -17,6 +17,8 @@ public class SecurityConfig {
     // 기존 WebSecurityConfigurerAdapter 상속 후, configure 메소드 오버라이딩하여 설정하는 방식 >> 보안 설정으로 인한 변경 이슈
     // 변경(권장방식) : SecurityFilterChain 를 빈으로 등록하는 방식
 
+
+    //스프링 시큐리티(Spring Seurity) 프레임워크에서 제공하는 클래스 중 하나로 비밀번호를 암호화하는 데 사용할 수 있는 메서드를 가진 클래스
     @Bean
     public BCryptPasswordEncoder encodePwd(){
         return new BCryptPasswordEncoder();

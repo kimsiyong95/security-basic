@@ -48,6 +48,8 @@ public class IndexController {
     @PostMapping("/join")
     public String join(User user){
         user.setRole("USER");
+
+        //SHA-1, 8바이트로 결합된 해쉬, 랜덤 하게 생성된 솔트(salt)를 지원
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
 
         userRepository.save(user);
